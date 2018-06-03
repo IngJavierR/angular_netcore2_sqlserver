@@ -6,9 +6,12 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
-    <Folder Include="Models\" />
-    <Folder Include="Data\" />
+    <Folder Include="Do\" />
+    <Folder Include="DataContext\" />
     <Folder Include="Services\" />
+    <Folder Include="Dao\" />
+    <Folder Include="To\" />
+    <Folder Include="Dao\DaoImpl\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,4 +23,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\OrderPriority.cs" />
+  </ItemGroup>
 </Project>

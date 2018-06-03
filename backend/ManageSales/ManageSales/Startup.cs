@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ManageSales.Data;
-using ManageSales.Services;
+using Quiniela.Data;
+using Quiniela.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Options;
+using Quiniela.Dao;
+using Quiniela.Dao.DaoImpl;
 
-namespace ManageSales
+namespace Quiniela
 {
     public class Startup
     {
@@ -27,12 +29,13 @@ namespace ManageSales
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SalesContext>(
+            services.AddDbContext<QuinielaContext>(
                 options => options
                     .UseLoggerFactory(MyLoggerFactory)
                     .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
-            services.AddScoped<ISaleServices, SalesService>();
+            services.AddScoped<IQuinielaServices, QuinielaService>();
+            services.AddScoped<IUserDAO, UserDAO>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
