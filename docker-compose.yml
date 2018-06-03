@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: "Dockerfile-backend"
     ports:
-      - "8083:8080"
+      - "8083:80"
     links:
       - mssql  
   mssql:
