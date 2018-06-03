@@ -12,11 +12,13 @@
     <Folder Include="Dao\" />
     <Folder Include="To\" />
     <Folder Include="Dao\DaoImpl\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="LumenWorksCsvReader" Version="3.9.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -21,8 +21,8 @@ namespace Quiniela.Controllers
 
         [HttpGet("{id}")]
         public IActionResult GetUser(long id){
-            this._quinielaService.GetUser(id);
-            return Ok(id);
+            var user = this._quinielaService.GetUser(id);
+            return Ok(user);
         }
     }
 }

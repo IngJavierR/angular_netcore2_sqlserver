@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Quiniela.Data;
+﻿using Quiniela.Data;
 using Quiniela.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
-using Microsoft.Extensions.Options;
 using Quiniela.Dao;
 using Quiniela.Dao.DaoImpl;
+using AutoMapper;
 
 namespace Quiniela
 {
@@ -34,6 +30,7 @@ namespace Quiniela
                     .UseLoggerFactory(MyLoggerFactory)
                     .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
+            services.AddAutoMapper();
             services.AddScoped<IQuinielaServices, QuinielaService>();
             services.AddScoped<IUserDAO, UserDAO>();
         }
