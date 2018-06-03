@@ -1,0 +1,4 @@
+FROM microsoft/dotnet:2.0-sdk
+COPY backend/Quiniela/Quiniela/bin/Release/netcoreapp2.0/ /root/
+WORKDIR /root/
+ENTRYPOINT ["dotnet", "Quiniela.dll"]
